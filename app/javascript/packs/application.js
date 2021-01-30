@@ -7,8 +7,9 @@ require("@rails/ujs").start()
 require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
-
+console.log("Hello from app/javascript/packs/application.js!");
 import 'bootstrap';
+//= require select2
 
 
 // Uncomment to copy all static images under ../images to the output folder and reference
@@ -17,3 +18,9 @@ import 'bootstrap';
 //
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
+
+import { initSelect2 } from '../components/init_select2';
+
+document.addEventListener("turbolinks:load", function() {
+  initSelect2();
+});
