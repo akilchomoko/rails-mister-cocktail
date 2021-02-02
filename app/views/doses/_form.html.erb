@@ -1,5 +1,5 @@
 <%= simple_form_for [cocktail, dose] do |f| %>
-  <%= f.input :description, error: "Mandatory" %>
+  <%= f.input :description %>
   <%= f.association :ingredient, inline_label: "Ingredient", input_html: { class: 'select2' } %>
   <%= f.button :submit, "Add" %>
 <% end %>

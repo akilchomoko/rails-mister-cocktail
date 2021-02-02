@@ -1,0 +1,5 @@
+<%= simple_form_for [cocktail, review], :url => cocktail_reviews_path(cocktail), :method => :post do |f| %>
+  <%= f.input :rating %>
+  <%= f.input :description %>
+  <%= f.button :submit, "Add" %>
+<% end %>
