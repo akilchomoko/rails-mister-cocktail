@@ -11,8 +11,8 @@ class DosesController < ApplicationController
     else
       @score = 0
       @reviews = @cocktail.reviews
-      redirect_to cocktail_path(@cocktail)
-      # render "cocktails/show"
+      # redirect_to cocktail_path(@cocktail)
+      render "cocktails/show"
     end
   end
 
