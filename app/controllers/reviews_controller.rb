@@ -1,5 +1,7 @@
 class ReviewsController < ApplicationController
 
+  # require_relative "cocktails_controller"
+
   before_action :set_cocktail, only: [:create, :edit, :update]
 
   def create
@@ -9,6 +11,10 @@ class ReviewsController < ApplicationController
     if @review.save
       redirect_to cocktail_path(@cocktail)
     else
+      @score = @cocktail.avg_score
+      @reviews = @cocktail.reviews
+      @doses = @cocktail.doses
+      @dose = Dose.new
       render "cocktails/show"
     end
   end

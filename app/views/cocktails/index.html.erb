@@ -1,5 +1,26 @@
-<ul>
-  <% @cocktails.each do |c| %>
-    <li><%= link_to c.name, cocktail_path(c) %></li>
-  <% end %>
-</ul>
+<div id="index-banner">
+  <h1>Cocktail Space99</h1>
+  <p></p>
+</div>
+
+<div class="container">
+<!--   <div class="card-list">
+    <ul>
+      <% @cocktails.each do |c| %>
+        <li><%= link_to c.name, cocktail_path(c) %> <%= "💥" * c.avg_score %></li>
+      <% end %>
+    </ul>
+  </div> -->
+
+
+  <div class="card-list">
+    <% @cocktails.each do |c| %>
+      <%= link_to cocktail_path(c) do %>
+      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path c.photo.key, height: 300, width: 400, crop: :fill %>')">
+        <p id="stars"> <% c.avg_score.times do  %><i class="far fa-star" id="irating"></i> <% end %> </p>
+        <p class="card-text"><%= c.name %></p>
+      </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>

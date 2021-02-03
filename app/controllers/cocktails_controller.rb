@@ -1,5 +1,7 @@
 class CocktailsController < ApplicationController
 
+  require 'open-uri'
+
   before_action :set_cocktail, only: [:edit, :show, :destroy, :update]
 
   def index
@@ -8,6 +10,7 @@ class CocktailsController < ApplicationController
 
   def show
     @dose = Dose.new
+    @review = Review.new
   end
 
   def new
@@ -16,6 +19,7 @@ class CocktailsController < ApplicationController
 
   def create
     @cocktail = Cocktail.new(params_cocktail)
+    default_image if @cocktail.photo.attachment.nil?
     if @cocktail.save
       redirect_to cocktail_path(@cocktail)
     else
@@ -42,19 +46,26 @@ class CocktailsController < ApplicationController
   private
 
   def params_cocktail
-    params.require(:cocktail).permit(:name, :instructions, :photo_url)
+    params.require(:cocktail).permit(:name, :instructions, :photo_url, :photo)
   end
 
   def set_cocktail
     @cocktail = Cocktail.find(params[:id])
-    @doses = Dose.where(cocktail_id: @cocktail.id)
-    @reviews = Review.where(cocktail_id: @cocktail.id)
-    @score = avg_score
+    # @doses = Dose.where(cocktail_id: @cocktail.id)
+    @doses = @cocktail.doses
+    @reviews = @cocktail.reviews
+    # @reviews = Review.where(cocktail_id: @cocktail.id)
+    @score = @cocktail.avg_score
   end
 
-  def avg_score
+  def avg_score_x
     sum = 0
     @reviews.each { |review| sum += review.rating }
     @reviews.count.positive? ? sum / @reviews.count : sum
+  end
+
+  def default_image
+    file = URI.open('https://res.cloudinary.com/dr4pzn94d/image/upload/v1612376373/kamila-maciejewska-UBX5-_ajTXw-unsplash_eo62cn.jpg')
+    @cocktail.photo.attach(io: file, filename: 'default.jpg', content_type: 'image/jpg')
   end
 end

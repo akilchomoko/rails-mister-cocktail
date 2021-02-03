@@ -1,3 +1,23 @@
 // Place all the styles related to the doses controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+.ingredient-container {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+
+#ingredient-add {
+  width: 50%;
+  margin: 0 auto;
+}
+
+#ingredient-list {
+  width: 50%;
+  margin: 0 auto;
+}
+
+#instructions {
+  width: 450px;
+}

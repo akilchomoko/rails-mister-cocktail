@@ -2,17 +2,87 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
-.ingredient-container {
+@import url('https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap');
+
+body {
+  background-color: #DA4F20;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0px;
+  margin: 0px;
+}
+a:hover {
+  text-decoration: none;
+  transform: scale(1.02);
+  transition-duration: 0.2s;
+}
+
+
+.container {
+  margin: 20px auto;
+}
+
+
+#index-banner {
+  background-image: url("rinck-content-studio-6YkD2qD86lg-unsplash");
+  height: 100vh !important;
+  background-size: cover;
+  background-position: center;
   display: flex;
-  justify-content: space-between;
+  align-items: center;
+  justify-content: center;
+
+  h1 {
+  color: white;
+  font-size: 24em;
+  font-family: 'Major Mono Display', monospace;
+  text-align: center;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  font-weight: bold;
+  }
 }
 
-#ingredient-add {
-  width: 50%;
-  margin: 0 auto;
+// .img_show {
+//   position: absolute;
+//   top: -80px;
+// }
+
+#irating {
+  color: white;
+  font-size: 2em;
 }
 
-#ingredient-list {
-  width: 50%;
-  margin: 0 auto;
+#irating_small {
+  color: white;
+  font-size: 1em;
 }
+
+#stars {
+  position: relative;
+  margin-top: 30px
+}
+
+.show-banner {
+  background-size: cover;
+  background-position: center;
+  padding: 150px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  h1 {
+  color: white;
+  font-size: 4em;
+  font-family: 'Major Mono Display', monospace;
+  text-align: center;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  font-weight: bold;
+  }
+}
+
+
+
+
+

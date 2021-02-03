@@ -9,8 +9,10 @@ class DosesController < ApplicationController
     if @dose.save
       redirect_to cocktail_path(@cocktail)
     else
-      @score = 0
+      @score = @cocktail.avg_score
       @reviews = @cocktail.reviews
+      @doses = @cocktail.doses
+      @review = Review.new
       # redirect_to cocktail_path(@cocktail)
       render "cocktails/show"
     end

@@ -1,6 +1,6 @@
 <%= simple_form_for(cocktail) do |f| %>
   <%= f.input :name %>
   <%= f.input :instructions %>
-  <%= f.input :photo_url %>
+  <%= f.input :photo, as: :file %>
   <%= f.submit %>
 <% end %>

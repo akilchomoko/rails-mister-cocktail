@@ -1,35 +1,53 @@
-<h2><%= @cocktail.name %> <%= link_to "(edit)", edit_cocktail_path(@cocktail) %> </h2>
-<h2><%= "💥" * @score %></h2>
-<hr>
-
-<div class="ingredient-container">
-  <div id="ingredient-list">
-    <h4>Instructions</h4>
-    <p><%= @cocktail.instructions %></p>
-    <hr>
-    <h4>Ingredients</h4>
-    <% @doses.each do |dose| %>
-      <ul>
-        <li><%= dose.description %> of <%= dose.ingredient.name %> <%= link_to "(delete)", cocktail_dose_path(@cocktail, dose), method: :delete %></li>
-      </ul>
-    <% end  %>
-  </div>
-  <div id="ingredient-add">
-    <h5>Add Ingredient</h5>
-    <%= render "doses/form", cocktail: @cocktail, dose: @dose %>
-  </div>
+<div class="show-banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= cl_image_path @cocktail.photo.key %>');">
+  <h1><%= @cocktail.name %> <%= link_to "(edit)", edit_cocktail_path(@cocktail) %> </h1>
 </div>
-<h4>Reviews</h4>
-<% @reviews.each do |review| %>
-  <ul>
-    <li><%= review.rating %> <%= review.description %> </li>
-  </ul>
-<% end %>
 
+<div class="container">
+  <p id="stars"> <% @cocktail.avg_score.times do  %><i class="far fa-star" id="irating"></i> <% end %> </p>
+  <div class="ingredient-container">
+    <div id="ingredient-list">
+      <h4>Ingredients</h4>
+      <% @doses.each do |dose| %>
+        <ul>
+          <li><%= dose.description %> of <%= dose.ingredient.name %> <%= link_to "(delete)", cocktail_dose_path(@cocktail, dose), method: :delete %></li>
+        </ul>
+      <% end  %>
 
-<h5>Add Review</</h5>
+      <p></p>
+      <div id="instructions">
+        <h4>Instructions</h4>
+        <p><%= @cocktail.instructions %></p>
+      </div>
+    </div>
 
-<%= render "reviews/form", cocktail: @cocktail, review: Review.new %>
+    <div id="ingredient-add">
+      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path @cocktail.photo.key, height: 300, width: 400, crop: :fill %>')"></div>
+      <h5>Add Ingredient</h5>
+      <%= render "doses/form", cocktail: @cocktail, dose: @dose %>
+    </div>
+  </div>
 
-<hr>
-<%= link_to "Back", cocktails_path  %>
+  <hr>
+
+  <div class="review-container">
+    <div id="review-list">
+      <h4>Reviews</h4>
+        <% @reviews.each do |review| %>
+        <ul>
+          <li><p id="stars"> <% review.rating.times do  %><i class="far fa-star" id="irating_small"></i> <% end %> </p></li>
+          <li id="review-desc">"<%= review.description %>"</li>
+          <p></p>
+        </ul>
+        <% end %>
+    </div>
+
+    <div id="review-add">
+      <h5>Add Review</h5>
+        <%= render "reviews/form", cocktail: @cocktail, review: @review %>
+    </div>
+  </div>
+
+  <hr>
+  <%= link_to "Back", cocktails_path  %>
+</div>
+
