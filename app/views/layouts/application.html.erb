@@ -15,18 +15,10 @@
     <nav class="navbar navbar-dark bg-dark">
       <%= link_to cocktails_path do %><span class="navbar-brand mb-0 h1">Cocktail Space99</span><% end %>
       <div>
-        <button type="button" class="btn btn-outline-light"><%= link_to "Home", cocktails_path,:class => "text-white" %></button>
-        <button type="button" class="btn btn-outline-light"><%= link_to "New cocktail", new_cocktail_path,:class => "text-white" %></button>
+        <%= link_to "Home", cocktails_path,:class => "btn btn-outline-light" %>
+        <%= link_to "New cocktail", new_cocktail_path, :class => "btn btn-outline-light" %>
       </div>
-<!--       <ul class="nav justify-content-end">
-        <li class="nav-item">
-          <%= link_to "Home ", cocktails_path,:class => "text-white" %>
-        </li>
-        <li class="nav-item">
-          <%= link_to "  New cocktail", new_cocktail_path,:class => "text-white" %>
-        </li>
-      </ul>
- -->    </nav>
+   </nav>
       <%= yield %>
   </body>
 </html>

@@ -5,5 +5,5 @@
   <p><%= @cocktail.photo.filename %></p>
   <%= render "form", cocktail: @cocktail %>
   <hr>
-  <%= link_to "Back", cocktail_path(@cocktail)  %>
+  <%= link_to "Back", cocktail_path(@cocktail), :class => "btn btn-outline-light"  %>
 </div>
