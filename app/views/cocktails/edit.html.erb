@@ -1,8 +1,9 @@
 <div class="container">
   <h1>Edit Cocktail</h1>
-  <%= cl_image_tag @cocktail.photo.key, height: 300, width: 400, crop: :fill %>
-  <%= render "form", cocktail: @cocktail %>
+  <div class="card" style="background-image: url('<%= cl_image_path @cocktail.photo.key, height: 300, width: 400, crop: :fill %>'); margin: 25px 0px 25px;">
+  </div>
   <p><%= @cocktail.photo.filename %></p>
+  <%= render "form", cocktail: @cocktail %>
   <hr>
   <%= link_to "Back", cocktail_path(@cocktail)  %>
 </div>

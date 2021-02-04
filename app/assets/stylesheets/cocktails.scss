@@ -4,66 +4,6 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap');
 
-body {
-  background-color: #DA4F20;
-}
-
-ul {
-  list-style-type: none;
-  padding: 0px;
-  margin: 0px;
-}
-a:hover {
-  text-decoration: none;
-  transform: scale(1.02);
-  transition-duration: 0.2s;
-}
-
-
-.container {
-  margin: 20px auto;
-}
-
-
-#index-banner {
-  // background-image: asset-url('rinck-content-studio-6YkD2qD86lg-unsplash.jpg');
-  height: 100vh !important;
-  background-size: cover;
-  background-position: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  h1 {
-  color: white;
-  font-size: 24em;
-  font-family: 'Major Mono Display', monospace;
-  text-align: center;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  font-weight: bold;
-  }
-}
-
-// .img_show {
-//   position: absolute;
-//   top: -80px;
-// }
-
-#irating {
-  color: white;
-  font-size: 2em;
-}
-
-#irating_small {
-  color: white;
-  font-size: 1em;
-}
-
-#stars {
-  position: relative;
-  margin-top: 30px
-}
-
 .show-banner {
   background-size: cover;
   background-position: center;
@@ -81,6 +21,37 @@ a:hover {
   font-weight: bold;
   }
 }
+
+body {
+  background-color: #333333;
+  color: white;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0px;
+  margin: 0px;
+}
+
+a:hover {
+  text-decoration: none;
+  transform: scale(1.02);
+  transition-duration: 0.2s;
+}
+
+h4 {
+  margin-top: 40px;
+}
+
+h1 {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.container {
+  margin: 20px auto;
+}
+
 
 
 

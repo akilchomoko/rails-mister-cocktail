@@ -15,12 +15,22 @@
   border-radius: 5px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   margin: 20px;
-}
+  position: relative;
 
-.card-text {
+  #stars {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  }
+
+  .card-text {
   color: white;
   font-family: 'Major Mono Display', monospace;
   font-size: 2em;
   font-weight: bold;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  text-align: center;
+  }
 }
+
+

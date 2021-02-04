@@ -2,22 +2,71 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
+
+
+#stars_intro {
+  margin-top: 20px;
+}
+
 .ingredient-container {
   display: flex;
   justify-content: space-between;
   position: relative;
+  height: 500px;
+
+  #ingredient-list {
+    width: 50%;
+    margin: 0 auto;
+  }
+
+  #instructions {
+    width: 450px;
+  }
 }
 
 #ingredient-add {
   width: 50%;
   margin: 0 auto;
+  position: relative;
+
+
+  .overlap {
+    position: absolute;
+    top: -135px;
+    right: 50px;
+    border-color: white;
+  }
+
+  .card {
+  background-size: cover;
+  background-position: center;
+  height: 270px;
+  width: 400px;
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
 
-#ingredient-list {
-  width: 50%;
-  margin: 0 auto;
+  .ingredient-add-form {
+    position: absolute;
+    top: 200px;
+    right: 180px;
+  }
 }
 
-#instructions {
-  width: 450px;
+
+// .img_show {
+//   position: absolute;
+//   top: -80px;
+// }
+
+#irating {
+  color: white;
+  font-size: 2em;
 }
+
+#irating_small {
+  color: white;
+  font-size: 1em;
+}
+
+

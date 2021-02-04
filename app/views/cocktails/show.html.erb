@@ -1,29 +1,31 @@
 <div class="show-banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= cl_image_path @cocktail.photo.key %>');">
-  <h1><%= @cocktail.name %> <%= link_to "(edit)", edit_cocktail_path(@cocktail) %> </h1>
+  <h1><%= @cocktail.name %>  </h1>
 </div>
 
 <div class="container">
-  <p id="stars"> <% @cocktail.avg_score.times do  %><i class="far fa-star" id="irating"></i> <% end %> </p>
   <div class="ingredient-container">
     <div id="ingredient-list">
+      <p id="stars_intro"> <% @cocktail.avg_score.times do  %><i class="far fa-star" id="irating"></i> <% end %> </p>
       <h4>Ingredients</h4>
       <% @doses.each do |dose| %>
         <ul>
-          <li><%= dose.description %> of <%= dose.ingredient.name %> <%= link_to "(delete)", cocktail_dose_path(@cocktail, dose), method: :delete %></li>
+          <li><%= dose.description %> of <%= dose.ingredient.name %> <%= link_to "(delete)", cocktail_dose_path(@cocktail, dose), method: :delete, :class => "text-secondary" %></li>
         </ul>
       <% end  %>
 
       <p></p>
       <div id="instructions">
-        <h4>Instructions</h4>
+        <h4>Instructions <%= link_to "(edit)", edit_cocktail_path(@cocktail), :class => "text-secondary" %></h4>
         <p><%= @cocktail.instructions %></p>
       </div>
     </div>
 
     <div id="ingredient-add">
-      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path @cocktail.photo.key, height: 300, width: 400, crop: :fill %>')"></div>
-      <h5>Add Ingredient</h5>
-      <%= render "doses/form", cocktail: @cocktail, dose: @dose %>
+      <div class="card overlap" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path @cocktail.photo.key, height: 300, width: 400, crop: :fill %>')"></div>
+      <div class="ingredient-add-form">
+        <!-- <h4>Add Ingredient</h4> -->
+        <%= render "doses/form", cocktail: @cocktail, dose: @dose %>
+      </div>
     </div>
   </div>
 

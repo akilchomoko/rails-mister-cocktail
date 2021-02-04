@@ -58,12 +58,6 @@ class CocktailsController < ApplicationController
     @score = @cocktail.avg_score
   end
 
-  def avg_score_x
-    sum = 0
-    @reviews.each { |review| sum += review.rating }
-    @reviews.count.positive? ? sum / @reviews.count : sum
-  end
-
   def default_image
     file = URI.open('https://res.cloudinary.com/dr4pzn94d/image/upload/v1612376373/kamila-maciejewska-UBX5-_ajTXw-unsplash_eo62cn.jpg')
     @cocktail.photo.attach(io: file, filename: 'default.jpg', content_type: 'image/jpg')

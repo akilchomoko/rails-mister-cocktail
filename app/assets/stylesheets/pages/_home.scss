@@ -1,1 +1,19 @@
 // Specific CSS for your home-page
+#index-banner {
+  // background-image: asset-url('rinck-content-studio-6YkD2qD86lg-unsplash.jpg');
+  height: 100vh !important;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  h1 {
+  color: white;
+  font-size: 12em;
+  font-family: 'Major Mono Display', monospace;
+  text-align: center;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  font-weight: bold;
+  }
+}
