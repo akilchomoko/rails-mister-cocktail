@@ -1,18 +1,8 @@
 <div id="index-banner" style="background-image: linear-gradient(rgba(0,0,0,.7),rgba(0,0,0,.7)), url(<%= image_path('rinck-content-studio-6YkD2qD86lg-unsplash.jpg') %>)">
   <h1>Cocktail Space99</h1>
-  <p></p>
 </div>
 
 <div class="container">
-<!--   <div class="card-list">
-    <ul>
-      <% @cocktails.each do |c| %>
-        <li><%= link_to c.name, cocktail_path(c) %> <%= "💥" * c.avg_score %></li>
-      <% end %>
-    </ul>
-  </div> -->
-
-
   <div class="card-list">
     <% @cocktails.each do |c| %>
       <%= link_to cocktail_path(c) do %>

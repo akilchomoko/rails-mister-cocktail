@@ -1,5 +1,5 @@
 <%= simple_form_for [cocktail, dose] do |f| %>
-  <%= f.input :description, label: "Add Fuel Quatity " %>
+  <%= f.input :description, label: "Add Fuel Quantity " %>
   <%= f.association :ingredient, label: "Add Fuel"  %>
   <%= f.button :submit, "Add", class: "btn btn-outline-light" %>
 <% end %>

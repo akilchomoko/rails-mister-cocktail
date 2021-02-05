@@ -1,6 +1,15 @@
 .navbar-lewagon {
+  display: flex;
+  align-items: center;
   justify-content: space-between;
-  background: white;
+  padding: 0.5rem 1rem;
+  background: transparent;
+  transition: 0.5s background-color ease;
+  color: white;
+}
+
+.navbar-lewagon-dark {
+  background-color: #333333;
 }
 
 .navbar-lewagon .navbar-collapse {
